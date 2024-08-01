@@ -12,7 +12,7 @@ interface QuestionProps {
 }
 
 const Test: React.FC<QuestionProps> = ({ questions }) => {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(15);
   const [currentAns, setCurrentAns] = useState<string | null>(null);
   const [shake, setShake] = useState(false);
   const [score, setScore] = useState(0);
