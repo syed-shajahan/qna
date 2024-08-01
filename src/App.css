@@ -1,38 +1,81 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.btn {
+  width: 100%;
+  padding: 20px;
+  background-color: transparent;
+  border: 1px solid #eee;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  background-color: #eeeeee6f;
+  transform: scale(0.95);
+}
+
+.btn.grn {
+  background-color: rgba(57, 240, 57, 0.331);
+  color: #000 !important;
+}
+
+.btn.red {
+  background-color: rgb(255 58 58);
+  color: #fff;
+}
+.btn:last-child {
+  margin-bottom: 20px;
+}
+
+.btn.btn-g {
+  background-color: rgba(127, 255, 212, 0.519);
+  font-size: 18px;
+  font-weight: 600;
   text-align: center;
+  max-width: 120px;
+  margin-left: auto;
+  display: block;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn.btn-g.btndisable {
+  cursor: not-allowed !important;
+  pointer-events: none !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.quiz-card {
+  transition: all 0.3s ease;
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (max-width: 992px) {
+  h3 {
+    font-size: 20px !important;
   }
 }

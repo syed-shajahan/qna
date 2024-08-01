@@ -1,0 +1,142 @@
+[
+  {
+    "question": "What is React?",
+    "options": [
+      "CSS Framework",
+      "React Library",
+      "React Framework",
+      "Testing Tool"
+    ],
+    "answer": "React Library"
+  },
+  {
+    "question": "What is 2 + 2?",
+    "options": ["3", "4", "5", "6"],
+    "answer": "4"
+  },
+  {
+    "question": "Which company developed JavaScript?",
+    "options": ["Microsoft", "Google", "Netscape", "IBM"],
+    "answer": "Netscape"
+  },
+  {
+    "question": "HTML stands for?",
+    "options": [
+      "HyperText Markup Language",
+      "HyperText Makeup Language",
+      "HyperTool Markup Language",
+      "Hyperlinking Text Markup Language"
+    ],
+    "answer": "HyperText Markup Language"
+  },
+  {
+    "question": "CSS stands for?",
+    "options": [
+      "Computer Style Sheets",
+      "Cascading Style Sheets",
+      "Creative Style Sheets",
+      "Colorful Style Sheets"
+    ],
+    "answer": "Cascading Style Sheets"
+  },
+  {
+    "question": "Which tag is used to define an internal style sheet?",
+    "options": ["<style>", "<css>", "<script>", "<link>"],
+    "answer": "<style>"
+  },
+  {
+    "question": "Which HTML attribute is used to define inline styles?",
+    "options": ["styles", "style", "class", "font"],
+    "answer": "style"
+  },
+  {
+    "question": "Inside which HTML element do we put the JavaScript?",
+    "options": ["<javascript>", "<js>", "<script>", "<scripting>"],
+    "answer": "<script>"
+  },
+  {
+    "question": "How do you write 'Hello World' in an alert box?",
+    "options": [
+      "msgBox('Hello World');",
+      "alert('Hello World');",
+      "alertBox('Hello World');",
+      "msg('Hello World');"
+    ],
+    "answer": "alert('Hello World');"
+  },
+  {
+    "question": "Which of the following is a JavaScript framework?",
+    "options": ["Laravel", "React", "Django", "Flask"],
+    "answer": "React"
+  },
+  {
+    "question": "What does SQL stand for?",
+    "options": [
+      "Structured Query Language",
+      "Stylish Question Language",
+      "Stylesheet Query Language",
+      "Statement Query Language"
+    ],
+    "answer": "Structured Query Language"
+  },
+  {
+    "question": "What is the correct way to write a JavaScript array?",
+    "options": [
+      "var colors = 'red', 'green', 'blue'",
+      "var colors = (1:'red', 2:'green', 3:'blue')",
+      "var colors = ['red', 'green', 'blue']",
+      "var colors = 1 = ('red'), 2 = ('green'), 3 = ('blue')"
+    ],
+    "answer": "var colors = ['red', 'green', 'blue']"
+  },
+  {
+    "question": "How do you declare a JavaScript variable?",
+    "options": [
+      "variable carName;",
+      "var carName;",
+      "v carName;",
+      "carName var;"
+    ],
+    "answer": "var carName;"
+  },
+  {
+    "question": "Which operator is used to assign a value to a variable?",
+    "options": ["*", "=", "-", "+"],
+    "answer": "="
+  },
+  {
+    "question": "Which symbol is used for comments in JavaScript?",
+    "options": ["//", "/*", "<!--", "#"],
+    "answer": "//"
+  },
+  {
+    "question": "Which company developed the Python programming language?",
+    "options": ["Microsoft", "Google", "Netscape", "None of the above"],
+    "answer": "None of the above"
+  },
+  {
+    "question": "In Python, which function is used to display output?",
+    "options": ["echo()", "print()", "console.log()", "output()"],
+    "answer": "print()"
+  },
+  {
+    "question": "What is the correct HTML element for inserting a line break?",
+    "options": ["<break>", "<br>", "<lb>", "<line>"],
+    "answer": "<br>"
+  },
+  {
+    "question": "What does CSS stand for?",
+    "options": [
+      "Colorful Style Sheets",
+      "Creative Style Sheets",
+      "Cascading Style Sheets",
+      "Computer Style Sheets"
+    ],
+    "answer": "Cascading Style Sheets"
+  },
+  {
+    "question": "Which HTML element is used to specify a footer for a document or section?",
+    "options": ["<footer>", "<bottom>", "<section>", "<foot>"],
+    "answer": "<footer>"
+  }
+]
