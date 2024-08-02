@@ -1,21 +1,24 @@
-import { Box, Button, Typography } from "@mui/material";
-import React, { useState } from "react";
+import { Box, Button, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import ScoreBord from './ScoreBord';
+import CardFooter from './CardFooter';
+import CardHead from './CardHead';
 
-interface ItestProps {
+export interface ItestProps {
   question: string;
   options: string[];
   answer: string;
 }
 
-interface QuestionProps {
+export interface QuestionProps {
   questions: ItestProps[];
 }
 
 const Test: React.FC<QuestionProps> = ({ questions }) => {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(18);
   const [currentAns, setCurrentAns] = useState<string | null>(null);
   const [shake, setShake] = useState(false);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState<number>(0);
 
   const handleNext = () => {
     setCurrentQuestionIndex((prev) => prev + 1);
@@ -33,26 +36,16 @@ const Test: React.FC<QuestionProps> = ({ questions }) => {
   };
 
   return currentQuestionIndex < questions.length ? (
-    <div
-      style={{
-        maxWidth: "800px",
-        width: "90%",
-        margin: "100px auto 40px",
-        padding: "16px",
-        border: "1px solid #EEE",
-        borderRadius: "10px",
-        background: "#fff",
-        boxShadow: "0px 10px 25px #ccc",
-      }}
-      className={`quiz-card ${shake ? "shake" : ""}`}
-    >
-      <p>
+    <Box className={`main_card quiz-card ${shake ? 'shake' : ''}`}>
+      {/* <p>
         {currentQuestionIndex + 1} of {questions.length} quiz Questions, let's
         do it! 🔥
       </p>
       <Typography variant="h3" my={3}>
         {questions[currentQuestionIndex].question}
-      </Typography>
+      </Typography> */}
+
+      <CardHead currentQuestionIndex={currentQuestionIndex} questions={questions} />
 
       <Box>
         {questions[currentQuestionIndex].options.map((option, index) => (
@@ -61,9 +54,9 @@ const Test: React.FC<QuestionProps> = ({ questions }) => {
             className={`btn ${
               currentAns
                 ? option === questions[currentQuestionIndex].answer
-                  ? "btn grn"
-                  : "btn red"
-                : ""
+                  ? 'btn grn'
+                  : 'btn red'
+                : ''
             }`}
             onClick={() => handleOptions(option, index)}
             disabled={currentAns !== null}
@@ -72,39 +65,10 @@ const Test: React.FC<QuestionProps> = ({ questions }) => {
           </button>
         ))}
       </Box>
-      <button
-        disabled={currentAns === null}
-        className={`btn btn-g  ${
-          currentAns === null ? "btn btn-g  btndisable" : "btn btn-g"
-        }`}
-        onClick={handleNext}
-      >
-        Next
-      </button>
-    </div>
+      <CardFooter currentAns={currentAns} handleNext={handleNext} />
+    </Box>
   ) : (
-    <div
-      style={{
-        maxWidth: "800px",
-        width: "90%",
-        margin: "100px auto 40px",
-        padding: "16px",
-        border: "1px solid #EEE",
-        borderRadius: "10px",
-        background: "#fff",
-        boxShadow: "0px 10px 25px #ccc",
-      }}
-    >
-      <p style={{ textAlign: "center", marginBottom:"10px" }}>Well played! 🥳 🎉 </p>
-
-      <h3 style={{ textAlign: "center" }}>
-        Here is your score buddy :{" "}
-        <strong style={{ fontSize: "40px", color: "rgb(69 146 208)" }}>
-          {score}
-        </strong>{" "}
-        not bad 👍{" "}
-      </h3>
-    </div>
+    <ScoreBord score={score} />
   );
 };
 
