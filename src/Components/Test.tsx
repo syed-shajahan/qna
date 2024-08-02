@@ -15,7 +15,7 @@ export interface QuestionProps {
 }
 
 const Test: React.FC<QuestionProps> = ({ questions }) => {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(18);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [currentAns, setCurrentAns] = useState<string | null>(null);
   const [shake, setShake] = useState(false);
   const [score, setScore] = useState<number>(0);
@@ -37,13 +37,6 @@ const Test: React.FC<QuestionProps> = ({ questions }) => {
 
   return currentQuestionIndex < questions.length ? (
     <Box className={`main_card quiz-card ${shake ? 'shake' : ''}`}>
-      {/* <p>
-        {currentQuestionIndex + 1} of {questions.length} quiz Questions, let's
-        do it! 🔥
-      </p>
-      <Typography variant="h3" my={3}>
-        {questions[currentQuestionIndex].question}
-      </Typography> */}
 
       <CardHead currentQuestionIndex={currentQuestionIndex} questions={questions} />
 
