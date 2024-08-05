@@ -1,8 +1,9 @@
-import { Box, Button, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import React, { useState } from 'react';
 import ScoreBord from './ScoreBord';
 import CardFooter from './CardFooter';
 import CardHead from './CardHead';
+import ListButton from './ListButton';
 
 export interface ItestProps {
   question: string;
@@ -15,7 +16,7 @@ export interface QuestionProps {
 }
 
 const Test: React.FC<QuestionProps> = ({ questions }) => {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [currentAns, setCurrentAns] = useState<string | null>(null);
   const [shake, setShake] = useState(false);
   const [score, setScore] = useState<number>(0);
@@ -37,25 +38,22 @@ const Test: React.FC<QuestionProps> = ({ questions }) => {
 
   return currentQuestionIndex < questions.length ? (
     <Box className={`main_card quiz-card ${shake ? 'shake' : ''}`}>
-
-      <CardHead currentQuestionIndex={currentQuestionIndex} questions={questions} />
+      <CardHead
+        currentQuestionIndex={currentQuestionIndex}
+        questions={questions}
+      />
 
       <Box>
         {questions[currentQuestionIndex].options.map((option, index) => (
-          <button
+          <ListButton
             key={index}
-            className={`btn ${
-              currentAns
-                ? option === questions[currentQuestionIndex].answer
-                  ? 'btn grn'
-                  : 'btn red'
-                : ''
-            }`}
-            onClick={() => handleOptions(option, index)}
-            disabled={currentAns !== null}
-          >
-            {option}
-          </button>
+            index={index}
+            option={option}
+            handleOptions={() => handleOptions(option, index)}
+            currentAns={currentAns}
+            currentQuestionIndex={currentQuestionIndex}
+            questions={questions}
+          />
         ))}
       </Box>
       <CardFooter currentAns={currentAns} handleNext={handleNext} />

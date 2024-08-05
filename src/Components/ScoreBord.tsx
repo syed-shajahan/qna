@@ -1,6 +1,7 @@
 import React from 'react';
+import { TESTPAGE } from '../types/enum';
 
-const ScoreBord = ({ score }: {score:number}) => {
+const ScoreBord = ({ score }: { score: number }) => {
   return (
     <div
       style={{
@@ -15,15 +16,15 @@ const ScoreBord = ({ score }: {score:number}) => {
       }}
     >
       <p style={{ textAlign: 'center', marginBottom: '10px' }}>
-        Well played! 🥳 🎉
+        {TESTPAGE.WELL_PLAYED}
       </p>
 
       <h3 style={{ textAlign: 'center' }}>
-        Here is your score buddy :{' '}
+        {TESTPAGE.YOUR_SCORE}
         <strong style={{ fontSize: '40px', color: 'rgb(69 146 208)' }}>
           {score}
         </strong>
-        not bad 👍
+        {TESTPAGE.NOT_BAD}
       </h3>
     </div>
   );
